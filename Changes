@@ -1,5 +1,8 @@
 Revision history for MooseX-Types-DateTime
 
+0.11      2015-08-16 01:05:36Z
+        - update some distribution tooling
+
 0.10      2014-02-03 17:17:57Z
         - temporarily revert change that cleaned namespaces (0.09), until the
           logic is cleaned up in MooseX::Types itself

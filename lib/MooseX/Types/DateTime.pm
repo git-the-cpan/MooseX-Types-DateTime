@@ -1,12 +1,10 @@
-package MooseX::Types::DateTime;
-BEGIN {
-  $MooseX::Types::DateTime::AUTHORITY = 'cpan:NUFFIN';
-}
-# git description: v0.09-1-ga15a07a
-$MooseX::Types::DateTime::VERSION = '0.10';
+package MooseX::Types::DateTime; # git description: v0.10-14-g05a2af1
+# ABSTRACT: L<DateTime> related constraints and coercions for Moose
 
 use strict;
 use warnings;
+
+our $VERSION = '0.11';
 
 use 5.008003;
 use Moose 0.41 ();
@@ -17,9 +15,10 @@ use DateTime::TimeZone 0.95 ();
 
 use MooseX::Types::Moose 0.30 qw/Num HashRef Str/;
 
-use namespace::clean 0.08;
+use namespace::clean 0.19;
 
 use MooseX::Types 0.30 -declare => [qw( DateTime Duration TimeZone Locale Now )];
+use if MooseX::Types->VERSION >= 0.42, 'namespace::autoclean';
 
 class_type "DateTime";
 class_type "DateTime::Duration";
@@ -88,14 +87,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
-MooseX::Types::DateTime - L<DateTime> related constraints and coercions for
-Moose
+MooseX::Types::DateTime - L<DateTime> related constraints and coercions for Moose
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -111,6 +111,11 @@ Export Example:
 
     Class->new( time_zone => "Africa/Timbuktu" );
 
+=head1 DESCRIPTION
+
+This module packages several L<Moose::Util::TypeConstraints> with coercions,
+designed to work with the L<DateTime> suite of objects.
+
 =for stopwords Namespaced
 
 Namespaced Example:
@@ -124,11 +129,6 @@ Namespaced Example:
     );
 
     Class->new( time_zone => "Africa/Timbuktu" );
-
-=head1 DESCRIPTION
-
-This module packages several L<Moose::Util::TypeConstraints> with coercions,
-designed to work with the L<DateTime> suite of objects.
 
 =head1 CONSTRAINTS
 
@@ -214,14 +214,41 @@ L<DateTime>, L<DateTimeX::Easy>
 
 =head1 AUTHOR
 
-Yuval Kogman E<lt>nothingmuch@woobling.orgE<gt>
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
 
-John Napiorkowski E<lt>jjn1056 at yahoo.comE<gt>
+=head1 CONTRIBUTORS
 
-=head1 COPYRIGHT
+=for stopwords Karen Etheridge Dagfinn Ilmari Mannsåker Florian Ragwitz John Napiorkowski Shawn M Moore
 
-    Copyright (c) 2008 Yuval Kogman. All rights reserved
-    This program is free software; you can redistribute
-    it and/or modify it under the same terms as Perl itself.
+=over 4
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+John Napiorkowski <jjnapiork@cpan.org>
+
+=item *
+
+Shawn M Moore <sartak@gmail.com>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2008 by יובל קוג'מן (Yuval Kogman).
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

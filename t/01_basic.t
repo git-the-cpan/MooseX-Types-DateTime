@@ -6,7 +6,7 @@ use Test::Fatal;
 
 use ok 'MooseX::Types::DateTime';
 
-use Moose::Util::TypeConstraints;
+use Moose::Util::TypeConstraints qw(find_type_constraint);
 
 isa_ok( find_type_constraint($_), "Moose::Meta::TypeConstraint" ) for qw(DateTime DateTime::TimeZone DateTime::Locale);
 

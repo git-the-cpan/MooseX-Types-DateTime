@@ -22,20 +22,20 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.007",
+            "Module::Build::Tiny" : "0.034",
             "perl" : "5.008003"
          }
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.102"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.104"
          },
          "requires" : {
             "Dist::Zilla" : "5",
             "Dist::Zilla::Plugin::Authority" : "1.009",
             "Dist::Zilla::Plugin::AuthorityFromModule" : "0.002",
             "Dist::Zilla::Plugin::AutoMetaResources" : "0",
-            "Dist::Zilla::Plugin::AutoPrereqs" : "0",
+            "Dist::Zilla::Plugin::AutoPrereqs" : "5.038",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease::Transitional" : "0.004",
             "Dist::Zilla::Plugin::CheckIssues" : "0",
             "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0",
@@ -161,7 +161,7 @@
    "provides" : {
       "MooseX::Types::DateTime" : {
          "file" : "lib/MooseX/Types/DateTime.pm",
-         "version" : "0.11"
+         "version" : "0.12"
       }
    },
    "release_status" : "stable",
@@ -179,10 +179,10 @@
       "x_IRC" : "irc://irc.perl.org/#moose",
       "x_MailingList" : "http://lists.perl.org/list/moose.html"
    },
-   "version" : "0.11",
+   "version" : "0.12",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.023001"
+         "version" : "5.023003"
       },
       "plugins" : [
          {
@@ -227,21 +227,21 @@
                }
             },
             "name" : "@Author::ETHER/stale modules, build",
-            "version" : "0.045"
+            "version" : "0.047"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
             "config" : {
                "Dist::Zilla::Plugin::PromptIfStale" : {
-                  "check_all_plugins" : "1",
-                  "check_all_prereqs" : "1",
+                  "check_all_plugins" : 1,
+                  "check_all_prereqs" : 1,
                   "modules" : [],
                   "phase" : "release",
                   "skip" : []
                }
             },
             "name" : "@Author::ETHER/stale modules, release",
-            "version" : "0.045"
+            "version" : "0.047"
          },
          {
             "class" : "Dist::Zilla::Plugin::FileFinder::ByName",
@@ -259,8 +259,9 @@
                "Dist::Zilla::Plugin::GatherDir" : {
                   "exclude_filename" : [
                      "CONTRIBUTING",
+                     "INSTALL",
                      "LICENSE",
-                     "README.md"
+                     "README.pod"
                   ],
                   "exclude_match" : [],
                   "follow_symlinks" : 0,
@@ -564,6 +565,16 @@
                         "version" : "4.012"
                      },
                      {
+                        "class" : "Pod::Weaver::Section::GenerateSection",
+                        "name" : "@Author::ETHER/generate SUPPORT",
+                        "version" : "1.01"
+                     },
+                     {
+                        "class" : "Pod::Weaver::Section::AllowOverride",
+                        "name" : "@Author::ETHER/allow override SUPPORT",
+                        "version" : "0.05"
+                     },
+                     {
                         "class" : "Pod::Weaver::Section::Authors",
                         "name" : "@Author::ETHER/Authors",
                         "version" : "4.012"
@@ -590,16 +601,6 @@
             "version" : "4.006"
          },
          {
-            "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
-            "config" : {
-               "Dist::Zilla::Role::FileWatcher" : {
-                  "version" : "0.006"
-               }
-            },
-            "name" : "@Author::ETHER/ReadmeAnyFromPod",
-            "version" : "0.150250"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
             "name" : "@Author::ETHER/GithubMeta",
             "version" : "0.54"
@@ -616,7 +617,7 @@
                   "module" : "MooseX::Types::DateTime"
                },
                "Dist::Zilla::Role::ModuleMetadata" : {
-                  "Module::Metadata" : "1.000027",
+                  "Module::Metadata" : "1.000029",
                   "version" : "0.003"
                }
             },
@@ -716,12 +717,15 @@
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker::Fallback",
             "config" : {
+               "Dist::Zilla::Plugin::MakeMaker::Awesome" : {
+                  "version" : "0.35"
+               },
                "Dist::Zilla::Role::TestRunner" : {
                   "default_jobs" : 9
                }
             },
             "name" : "@Author::ETHER/MakeMaker::Fallback",
-            "version" : "0.019"
+            "version" : "0.021"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleBuildTiny::Fallback",
@@ -747,7 +751,7 @@
                            }
                         },
                         "name" : "ModuleBuildTiny, via ModuleBuildTiny::Fallback",
-                        "version" : "0.013"
+                        "version" : "0.014"
                      }
                   ]
                },
@@ -756,7 +760,7 @@
                }
             },
             "name" : "@Author::ETHER/ModuleBuildTiny::Fallback",
-            "version" : "0.018"
+            "version" : "0.020"
          },
          {
             "class" : "Dist::Zilla::Plugin::StaticInstall",
@@ -788,7 +792,7 @@
                   ]
                },
                "Dist::Zilla::Role::ModuleMetadata" : {
-                  "Module::Metadata" : "1.000027",
+                  "Module::Metadata" : "1.000029",
                   "version" : "0.003"
                }
             },
@@ -914,13 +918,13 @@
             "config" : {
                "Dist::Zilla::Plugin::Run::Role::Runner" : {
                   "eval" : [
-                     "unlink 'README.md'"
+                     "unlink 'LICENSE'"
                   ],
                   "fatal_errors" : 1,
                   "quiet" : 1
                }
             },
-            "name" : "@Author::ETHER/remove old READMEs",
+            "name" : "@Author::ETHER/remove old LICENSE",
             "version" : "0.042"
          },
          {
@@ -942,6 +946,16 @@
             "version" : "0.006"
          },
          {
+            "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
+            "config" : {
+               "Dist::Zilla::Role::FileWatcher" : {
+                  "version" : "0.006"
+               }
+            },
+            "name" : "@Author::ETHER/ReadmeAnyFromPod",
+            "version" : "0.150250"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "config" : {
                "Dist::Zilla::Plugin::Git::Commit" : {
@@ -954,8 +968,9 @@
                   "allow_dirty" : [
                      "CONTRIBUTING",
                      "Changes",
+                     "INSTALL",
                      "LICENSE",
-                     "README.md"
+                     "README.pod"
                   ],
                   "allow_dirty_match" : [],
                   "changelog" : "Changes"
@@ -977,7 +992,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "v0.11",
+                  "tag" : "v0.12",
                   "tag_format" : "v%v",
                   "tag_message" : "v%v%t"
                },
@@ -1125,7 +1140,7 @@
                   "conflicts_module" : "Moose::Conflicts"
                },
                "Dist::Zilla::Role::ModuleMetadata" : {
-                  "Module::Metadata" : "1.000027",
+                  "Module::Metadata" : "1.000029",
                   "version" : "0.003"
                }
             },

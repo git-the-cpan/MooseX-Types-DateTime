@@ -1,20 +1,20 @@
 do { my $x = {
        'configure' => {
                         'requires' => {
-                                        'Module::Build::Tiny' => '0.007',
+                                        'Module::Build::Tiny' => '0.034',
                                         'perl' => '5.008003'
                                       }
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.102'
+                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.104'
                                       },
                       'requires' => {
                                       'Dist::Zilla' => '5',
                                       'Dist::Zilla::Plugin::Authority' => '1.009',
                                       'Dist::Zilla::Plugin::AuthorityFromModule' => '0.002',
                                       'Dist::Zilla::Plugin::AutoMetaResources' => '0',
-                                      'Dist::Zilla::Plugin::AutoPrereqs' => '0',
+                                      'Dist::Zilla::Plugin::AutoPrereqs' => '5.038',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease::Transitional' => '0.004',
                                       'Dist::Zilla::Plugin::CheckIssues' => '0',
                                       'Dist::Zilla::Plugin::CheckPrereqsIndexed' => '0',

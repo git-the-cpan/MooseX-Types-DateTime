@@ -1,10 +1,10 @@
-package MooseX::Types::DateTime; # git description: v0.10-14-g05a2af1
+package MooseX::Types::DateTime; # git description: v0.11-2-gcf49f6d
 # ABSTRACT: L<DateTime> related constraints and coercions for Moose
 
 use strict;
 use warnings;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use 5.008003;
 use Moose 0.41 ();
@@ -95,7 +95,7 @@ MooseX::Types::DateTime - L<DateTime> related constraints and coercions for Moos
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
@@ -212,6 +212,17 @@ L<MooseX::Types::DateTime::MoreCoercions>
 
 L<DateTime>, L<DateTimeX::Easy>
 
+=head1 SUPPORT
+
+Bugs may be submitted through L<the RT bug tracker|https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Types-DateTime>
+(or L<bug-MooseX-Types-DateTime@rt.cpan.org|mailto:bug-MooseX-Types-DateTime@rt.cpan.org>).
+
+There is also a mailing list available for users of this distribution, at
+L<http://lists.perl.org/list/moose.html>.
+
+There is also an irc channel available for users of this distribution, at
+irc://irc.perl.org/#moose.
+
 =head1 AUTHOR
 
 יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
@@ -244,7 +255,7 @@ Shawn M Moore <sartak@gmail.com>
 
 =back
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT AND LICENCE
 
 This software is copyright (c) 2008 by יובל קוג'מן (Yuval Kogman).
 

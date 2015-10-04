@@ -7,7 +7,7 @@ do { my $x = {
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.104'
+                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.105'
                                       },
                       'requires' => {
                                       'Dist::Zilla' => '5',
@@ -72,7 +72,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Test::CleanNamespaces' => '0.006',
                                       'Dist::Zilla::Plugin::Test::Compile' => '2.039',
                                       'Dist::Zilla::Plugin::Test::EOL' => '0.17',
-                                      'Dist::Zilla::Plugin::Test::Kwalitee' => '2.06',
+                                      'Dist::Zilla::Plugin::Test::Kwalitee' => '2.10',
                                       'Dist::Zilla::Plugin::Test::MinimumVersion' => '2.000003',
                                       'Dist::Zilla::Plugin::Test::NoTabs' => '0.08',
                                       'Dist::Zilla::Plugin::Test::Pod::No404s' => '1.002',

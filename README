@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution MooseX-Types-DateTime,
-version 0.12:
+version 0.13:
 
   L<DateTime> related constraints and coercions for Moose
 

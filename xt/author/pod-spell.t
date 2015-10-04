@@ -32,6 +32,9 @@ jjnapiork
 Shawn
 Moore
 sartak
+Dave
+Rolsky
+autarch
 lib
 MooseX
 Types

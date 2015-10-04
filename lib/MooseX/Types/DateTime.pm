@@ -1,10 +1,10 @@
-package MooseX::Types::DateTime; # git description: v0.11-2-gcf49f6d
+package MooseX::Types::DateTime; # git description: v0.12-2-g35c46dd
 # ABSTRACT: L<DateTime> related constraints and coercions for Moose
 
 use strict;
 use warnings;
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use 5.008003;
 use Moose 0.41 ();
@@ -13,7 +13,7 @@ use DateTime::Duration 0.4302 ();
 use DateTime::Locale 0.4001 ();
 use DateTime::TimeZone 0.95 ();
 
-use MooseX::Types::Moose 0.30 qw/Num HashRef Str/;
+use MooseX::Types::Moose 0.30 qw/Num HashRef Object Str/;
 
 use namespace::clean 0.19;
 
@@ -23,12 +23,14 @@ use if MooseX::Types->VERSION >= 0.42, 'namespace::autoclean';
 class_type "DateTime";
 class_type "DateTime::Duration";
 class_type "DateTime::TimeZone";
-class_type "DateTime::Locale::root" => { name => "DateTime::Locale" };
 
 subtype DateTime, as 'DateTime';
 subtype Duration, as 'DateTime::Duration';
 subtype TimeZone, as 'DateTime::TimeZone';
-subtype Locale,   as 'DateTime::Locale';
+
+subtype 'DateTime::Locale', as Object,
+    where { $_->isa('DateTime::Locale::root') || $_->isa('DateTime::Locale::FromData') };
+subtype Locale, as 'DateTime::Locale';
 
 subtype( Now,
     as Str,
@@ -95,7 +97,7 @@ MooseX::Types::DateTime - L<DateTime> related constraints and coercions for Moos
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -229,7 +231,7 @@ irc://irc.perl.org/#moose.
 
 =head1 CONTRIBUTORS
 
-=for stopwords Karen Etheridge Dagfinn Ilmari Mannsåker Florian Ragwitz John Napiorkowski Shawn M Moore
+=for stopwords Karen Etheridge Dagfinn Ilmari Mannsåker Florian Ragwitz John Napiorkowski Shawn M Moore Dave Rolsky
 
 =over 4
 
@@ -252,6 +254,10 @@ John Napiorkowski <jjnapiork@cpan.org>
 =item *
 
 Shawn M Moore <sartak@gmail.com>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
 
 =back
 

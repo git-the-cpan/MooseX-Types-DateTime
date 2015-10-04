@@ -28,7 +28,7 @@ no_index:
 provides:
   MooseX::Types::DateTime:
     file: lib/MooseX/Types/DateTime.pm
-    version: '0.12'
+    version: '0.13'
 requires:
   DateTime: '0.4302'
   DateTime::Duration: '0.4302'
@@ -48,7 +48,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Types-DateTime
   homepage: https://github.com/moose/MooseX-Types-DateTime
   repository: https://github.com/moose/MooseX-Types-DateTime.git
-version: '0.12'
+version: '0.13'
 x_Dist_Zilla:
   perl:
     version: '5.023003'
@@ -112,7 +112,7 @@ x_Dist_Zilla:
           exclude_filename:
             - CONTRIBUTING
             - INSTALL
-            - LICENSE
+            - LICENCE
             - README.pod
           exclude_match: []
           follow_symlinks: 0
@@ -244,7 +244,7 @@ x_Dist_Zilla:
           filename: xt/author/kwalitee.t
           skiptest: []
       name: '@Author::ETHER/Test::Kwalitee'
-      version: '2.11'
+      version: '2.12'
     -
       class: Dist::Zilla::Plugin::MojibakeTests
       name: '@Author::ETHER/MojibakeTests'
@@ -600,21 +600,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::CheckIssues
       name: '@Author::ETHER/CheckIssues'
-      version: '0.008'
+      version: '0.009'
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::ETHER/UploadToCPAN'
       version: '5.039'
-    -
-      class: Dist::Zilla::Plugin::Run::AfterRelease
-      config:
-        Dist::Zilla::Plugin::Run::Role::Runner:
-          eval:
-            - "unlink 'LICENSE'"
-          fatal_errors: 1
-          quiet: 1
-      name: '@Author::ETHER/remove old LICENSE'
-      version: '0.042'
     -
       class: Dist::Zilla::Plugin::CopyFilesFromRelease
       config:
@@ -648,7 +638,7 @@ x_Dist_Zilla:
             - CONTRIBUTING
             - Changes
             - INSTALL
-            - LICENSE
+            - LICENCE
             - README.pod
           allow_dirty_match: []
           changelog: Changes
@@ -665,7 +655,7 @@ x_Dist_Zilla:
           branch: ~
           changelog: Changes
           signed: 0
-          tag: v0.12
+          tag: v0.13
           tag_format: v%v
           tag_message: v%v%t
         Dist::Zilla::Role::Git::Repo:
@@ -833,5 +823,6 @@ x_contributors:
   - 'Florian Ragwitz <rafl@debian.org>'
   - 'John Napiorkowski <jjnapiork@cpan.org>'
   - 'Shawn M Moore <sartak@gmail.com>'
+  - 'Dave Rolsky <autarch@urth.org>'
 x_permissions_from_module: MooseX::Types::DateTime
 x_static_install: 1

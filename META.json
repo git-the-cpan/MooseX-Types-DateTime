@@ -28,7 +28,7 @@
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.104"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.105"
          },
          "requires" : {
             "Dist::Zilla" : "5",
@@ -93,7 +93,7 @@
             "Dist::Zilla::Plugin::Test::CleanNamespaces" : "0.006",
             "Dist::Zilla::Plugin::Test::Compile" : "2.039",
             "Dist::Zilla::Plugin::Test::EOL" : "0.17",
-            "Dist::Zilla::Plugin::Test::Kwalitee" : "2.06",
+            "Dist::Zilla::Plugin::Test::Kwalitee" : "2.10",
             "Dist::Zilla::Plugin::Test::MinimumVersion" : "2.000003",
             "Dist::Zilla::Plugin::Test::NoTabs" : "0.08",
             "Dist::Zilla::Plugin::Test::Pod::No404s" : "1.002",
@@ -161,7 +161,7 @@
    "provides" : {
       "MooseX::Types::DateTime" : {
          "file" : "lib/MooseX/Types/DateTime.pm",
-         "version" : "0.12"
+         "version" : "0.13"
       }
    },
    "release_status" : "stable",
@@ -179,7 +179,7 @@
       "x_IRC" : "irc://irc.perl.org/#moose",
       "x_MailingList" : "http://lists.perl.org/list/moose.html"
    },
-   "version" : "0.12",
+   "version" : "0.13",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.023003"
@@ -260,7 +260,7 @@
                   "exclude_filename" : [
                      "CONTRIBUTING",
                      "INSTALL",
-                     "LICENSE",
+                     "LICENCE",
                      "README.pod"
                   ],
                   "exclude_match" : [],
@@ -429,7 +429,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::Kwalitee",
-            "version" : "2.11"
+            "version" : "2.12"
          },
          {
             "class" : "Dist::Zilla::Plugin::MojibakeTests",
@@ -906,26 +906,12 @@
          {
             "class" : "Dist::Zilla::Plugin::CheckIssues",
             "name" : "@Author::ETHER/CheckIssues",
-            "version" : "0.008"
+            "version" : "0.009"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@Author::ETHER/UploadToCPAN",
             "version" : "5.039"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Run::AfterRelease",
-            "config" : {
-               "Dist::Zilla::Plugin::Run::Role::Runner" : {
-                  "eval" : [
-                     "unlink 'LICENSE'"
-                  ],
-                  "fatal_errors" : 1,
-                  "quiet" : 1
-               }
-            },
-            "name" : "@Author::ETHER/remove old LICENSE",
-            "version" : "0.042"
          },
          {
             "class" : "Dist::Zilla::Plugin::CopyFilesFromRelease",
@@ -969,7 +955,7 @@
                      "CONTRIBUTING",
                      "Changes",
                      "INSTALL",
-                     "LICENSE",
+                     "LICENCE",
                      "README.pod"
                   ],
                   "allow_dirty_match" : [],
@@ -992,7 +978,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "v0.12",
+                  "tag" : "v0.13",
                   "tag_format" : "v%v",
                   "tag_message" : "v%v%t"
                },
@@ -1218,7 +1204,8 @@
       "Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>",
       "Florian Ragwitz <rafl@debian.org>",
       "John Napiorkowski <jjnapiork@cpan.org>",
-      "Shawn M Moore <sartak@gmail.com>"
+      "Shawn M Moore <sartak@gmail.com>",
+      "Dave Rolsky <autarch@urth.org>"
    ],
    "x_permissions_from_module" : "MooseX::Types::DateTime",
    "x_static_install" : 1
